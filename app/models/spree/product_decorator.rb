@@ -5,7 +5,7 @@ module Spree
 
     accepts_nested_attributes_for :issues
 
-    delegate_belongs_to :master, :issues_number
+    delegate to: :master, to: :issues_number
 
     scope :subscribable, -> { where(subscribable: true) }
     scope :unsubscribable, -> { where(subscribable: false) }
